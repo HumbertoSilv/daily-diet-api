@@ -5,8 +5,11 @@ from app.main.models.meals import Meal
 
 def create_meal():
     data = request.get_json()
+    name = data.get("name")
+    extra = data.get("extra")
+    date = data.get("date")
 
-    if "name" not in data.keys() or "extra" not in data.keys():
+    if extra is None or not name or not date:
         return jsonify({"message": "invalid parameters"}), 400
 
     try:
