@@ -1,4 +1,5 @@
 from datetime import date as datetime
+
 from app.main.repository.meals import Meals
 
 
@@ -9,7 +10,7 @@ class Meal:
             extra: bool,
             date: datetime,
             description: str = ""
-            ) -> None:
+    ) -> None:
         self.name = name
         self.extra = extra
         self.description = description
@@ -23,6 +24,6 @@ class Meal:
             description=self.description,
             date=self.date,
             extra=self.extra
-            )
+        )
 
         new_meal.save()
